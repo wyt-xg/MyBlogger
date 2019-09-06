@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   	  <meta charset="utf-8" />	
+      <title>其他组件</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+      <link href="../css/bootstrap.css" rel="stylesheet">
+ 
+      <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+   	<!--分页-->
+   		<ul class="pagination">
+   			<li><a href="#">&laquo;</a></li>
+   			<li><a href="#">&lt;</a></li>
+   			<li class="active"><a href="" >1</a></li> <!--选中-->
+   			<li class="disabled"><a href="">2</a></li> <!--禁用-->
+   			<li><a href="">3</a></li>
+   			<li><a href="">4</a></li>
+   			<li><a href="#">&gt;</a></li>
+   			<li><a href="#">&raquo;</a></li>
+   		</ul>
+   		<ul class="pagination pagination-sm">
+   			<li><a href="#">&laquo;</a></li>
+   			<li><a href="#">&lt;</a></li>
+   			<li class="active"><a href="" >1</a></li> <!--选中-->
+   			<li class="disabled"><a href="">2</a></li> <!--禁用-->
+   			<li><a href="">3</a></li>
+   			<li><a href="">4</a></li>
+   			<li><a href="#">&gt;</a></li>
+   			<li><a href="#">&raquo;</a></li>
+   		</ul>
+   		<ul class="pagination pagination-lg">
+   			<li><a href="#">&laquo;</a></li>
+   			<li><a href="#">&lt;</a></li>
+   			<li class="active"><a href="" >1</a></li> <!--选中-->
+   			<li class="disabled"><a href="">2</a></li> <!--禁用-->
+   			<li><a href="">3</a></li>
+   			<li><a href="">4</a></li>
+   			<li><a href="#">&gt;</a></li>
+   			<li><a href="#">&raquo;</a></li>
+   		</ul>
+   		<hr />
+   		<!--翻页-->
+   		<ul class="pager">
+   			<li class="previous"><a href="#">上一页</a></li> <!--class="previous"：靠左-->
+   			<li class="next"><a href="#">下一页</a></li> <!--class="next"：靠右-->
+   		</ul>
+   		<hr />
+   		<!--标签-->
+   		<h1>hhh<span class="label label-default">标签</span></h1>
+   		<h2>hhh<span class="label label-default">标签</span></h2>
+   		<hr />
+   		<!--给标签加颜色-->
+   		<span class="label label-default ">标签</span>
+   		<span class="label label-success ">标签</span>
+   		<span class="label label-primary">标签</span>
+   		<span class="label label-info">标签</span>
+   		<hr />
+   		<!--徽章-->
+   		<a href="#">信息<span class="badge">99+</span></a>
+   		<hr />	
+   		<!--胶囊式导航条-->
+   		<ul class="nav nav-pills">
+   			<li class="active"><a href="cssDemo02.html">首页</a></li>
+   			<li><a href="cssDemo02.html">消息<span class="badge">50</span></a></li>
+   			<li><a href="cssDemo02.html">消息<span class="badge">50</span></a></li>
+   		</ul>
+   		<!--垂直胶囊式导航条-->
+   		<ul class="nav nav-pills nav-stacked">
+   			<li class="active"><a href="cssDemo02.html">首页</a></li>
+   			<li><a href="cssDemo02.html">消息<span class="badge">50</span></a></li>
+   			<li><a href="cssDemo02.html">消息<span class="badge">50</span></a></li>
+   		</ul>
+   		<!--超大屏幕-->
+   		<div class="container">
+   			<div class="jumbotron">
+   				<h1>啦啦啦</h1>
+   				<p>我的个人主页……</p>
+   			</div>
+   		</div>
+   		<hr />
+   		<!--宽度占全屏的超大屏幕-->
+   		<div class="jumbotron text-center"> <!-- text-center文本居中-->
+   			<div class="container">
+   				<h1>啦啦啦</h1>
+   				<p>我的个人主页……</p>
+   			</div>
+   		</div>
+   		<hr />
+   		<!--缩略图-->
+   		<div class="row">
+   			<div class="col-sm-6 col-md-3">
+   				<a href="#"  class="thumbnail">
+   					<img src="../img/要习惯一个人.png" width="300px"/>
+   				</a>
+   			</div>
+   			<div class="col-sm-6 col-md-3">
+   				<a href="#"  class="thumbnail">
+   					<img src="../img/要习惯一个人.png" width="300px"/>
+   				</a>
+   			</div>
+   			<div class="col-sm-6 col-md-3">
+   				<a href="#" class="thumbnail">
+   					<img src="../img/要习惯一个人.png" width="300px" />
+   				</a>
+   			</div>
+   			<div class="col-sm-6 col-md-3">
+   				<a href="#" class="thumbnail">
+   					<img src="../img/要习惯一个人.png" width="300px" />
+   				</a>
+   			</div>
+   		</div>
+   		<hr />
+   		
+   		<div class="row">
+   			<div class="col-sm-6 col-md-3">
+   				<div href="#"  class="thumbnail">
+   					<img src="../img/要习惯一个人.png" width="300px"/>
+   					<div class="caption">
+   						<h3>书籍</h3>
+   						<p>只能陪你走一程</p>
+   						<p>
+   							<button type="button" class="btn btn-success">投票</button>
+   							<button type="button" class="btn btn-default">查看大图</button>
+   						</p>
+   					</div>
+   				</div>
+   			</div>
+   			<div class="col-sm-6 col-md-3">
+   				<a href="#"  class="thumbnail">
+   					<img src="../img/要习惯一个人.png" width="300px"/>
+   				</a>
+   			</div>
+   			<div class="col-sm-6 col-md-3">
+   				<a href="#" class="thumbnail">
+   					<img src="../img/要习惯一个人.png" width="300px" />
+   				</a>
+   			</div>
+   			<div class="col-sm-6 col-md-3">
+   				<a href="#" class="thumbnail">
+   					<img src="../img/要习惯一个人.png" width="300px" />
+   				</a>
+   			</div>
+   		</div>
+   		<hr />
+   		<!--警告框-->
+   		<div class="alert alert-info">普通警告框</div>
+   		<div class="alert alert-success">成功色警告框</div>
+   		<div class="alert alert-warning">危险警告框</div>
+   		<hr />
+   		<!--可以关闭的警告框-->
+   		<div class="alert alert-info alert-dismissable"> <!--alert-dismissable:定义位可关闭的-->
+   			<button type="button" class="close" data-dismiss="alert"> <!--class="close"：关闭-->
+   				&times;
+   			</button>
+   			可关闭的警告框
+   		</div>
+   		
+   		<!--超链接警告框-->
+   		<div class="alert alert-info">
+   			<a href="#">超链接的警告框</a>
+   		</div>
+   </body>
+   <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="../js/jquery-1.11.0.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="../js/bootstrap.js"></script>
+</html>

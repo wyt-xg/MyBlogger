@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   	  <meta charset="utf-8" />	
+      <title>Bootstrap 模板</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+      <link href="../css/bootstrap.css" rel="stylesheet">
+ 
+      <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+   		<p>标签式导航条</p>
+   		<ul class="nav nav-tabs nav-justified">
+   			<li class="active"><a href="#">Home</a></li>
+   			<li><a href="#">Java</a></li>
+   			<li><a href="#">HTML</a></li>
+   		</ul>
+   		<p>胶囊式导航条</p>
+   		<ul class="nav nav-pills">
+   			<li class="active"><a href="#">Home</a></li> <!--默认选中-->
+   			<li class="disabled"><a href="#">Java</a></li>  <!--禁用-->
+   			<li><a href="#">HTML</a></li>
+   		</ul>
+   		<p>带有下拉菜单的导航条</p>
+   		<ul class="nav nav-pills">
+   			<li><a href="#">Home</a></li> 
+   			<li ><a href="#">Java</a></li>
+   			<li><a href="#">HTML</a></li>
+   			<li class="dropdown">
+   				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+   					李白<span class="caret"></span>
+   				</a>
+   				<ul class="dropdown-menu" role="menu">
+   					<li><a href="#">杜甫</a></li>
+   					<li><a href="#">李清照</a></li>
+   					<li><a href="#">辛弃疾</a></li>
+   				</ul>
+   			</li>
+   		</ul>
+   		
+   		<hr />
+   		<!--导航栏-->
+   		<nav class="nav navbar-default" role="navigation">
+   			<div class="navbar-header">
+   				<a href="#" class="navbar-brand">教程</a>
+   			</div>
+   			<div>
+   				<ul class="nav navbar-nav">
+   					<li class="active"><a href="#">css</a></li>
+   					<li ><a href="#">html</a></li>
+   					<li ><a href="#">js</a></li>
+   					<!--加一个下拉的li-->
+   					<li class="dropdown">
+   						<a href="cssDemo02.html" class="dropdown-toggle" data-toggle="dropdown">
+   							hh <span class="caret"></span>
+   						</a>
+   						<ul class="dropdown-menu" role="menu">
+   							<li><a href="#">gfg</a></li>
+   							<li class="divider"></li>
+   							<li><a href="#">gfg</a></li>
+   						</ul>
+   					</li>
+   				</ul>
+   			</div>
+   		</nav>
+   		
+   		<hr />
+   		<!--响应式导航栏-->
+   		<nav class="nav navbar-default" role="navigation">
+   			<div class="navbar-header">
+   				<button class="navbar-toggle" data-toggle="collapse" data-target="#nav" type="button">
+   					<span class="sr-only">响应式</span>
+   					<span class="icon-bar"></span>
+   					<span class="icon-bar"></span>
+   					<span class="icon-bar"></span>
+   				</button>
+   				<a href="cssDemo02.html" class="navbar-brand">你好呀</a>
+   			</div>
+   			<div class="collapse navbar-collapse" id="nav">
+   				<ul class="nav navbar-nav">
+   					<li class="active"><a href="#">响应式一</a></li>
+   					<li><a href="#">响应式二</a></li>
+   					<li><a href="#">响应式三</a></li>
+   					<li class="dropdown">
+   						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+   							其他 <span class="caret"></span>
+   						</a>
+   						<ul class="dropdown-menu">
+   							<li><a href="#">一</a></li>
+   							<li class="divider"></li>
+   							<li class="dropdown-header"><a href="#">第二</a></li>
+   							<li><a href="#">ha</a></li>
+   						</ul>
+   					</li>
+   				</ul>
+   			</div>
+   		</nav>
+   		<hr />
+   		<!--导航栏中的表单-->
+   		<nav class="nav navbar-default" role="navigation">
+   			<div class="navbar-header">
+   				<a href="#" class="navbar-brand">教程</a>
+   			</div>
+   			<form class="navbar-form navbar-left">
+   				<div class="form-group">
+   					<input type="text" class="form-control"/>
+   				</div>
+   				<button type="button" class="btn btn-primary">提交</button>
+   			</form>
+   		</nav>
+   		
+   		<nav class="nav navbar-default" role="navigation">
+   			<div class="navbar-header">
+   				<a href="#" class="navbar-brand">教程</a>
+   			</div>
+   			<form class="navbar-form navbar-right">
+   				<div class="form-group">
+   					<input type="text" class="form-control"/>
+   				</div>
+   				<button type="button" class="btn btn-primary">提交</button>
+   			</form>
+   			<button type="button" class="navbar-btn btn btn-success">搜索</button>
+   		</nav>
+   		<hr />
+   		<nav class="nav navbar-default" role="navigation">
+   			<div class="navbar-header">
+   				<a href="cssDemo.html" class="navbar-brand">教程</a>
+   			</div>
+   			<div>
+   				<p class="navbar-text">简单的文本</p>
+   			</div>
+   		</nav>
+   		
+   		<hr />
+   		<nav class="nav navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+   			<!-- navbar-fixed-top：固定导航条在顶部，top换为bottom式固定在底部，navbar-inverse：反色导航条-->
+   			<div class="navbar-header">
+   				<a href="#" class="navbar-brand">教程</a>
+   			</div>
+   			<ul class="nav navbar-nav navbar-right">
+   				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+   				<li><a href="#"><span class="glyphicon glyphicon-plus"></span> 注册</a></li>
+   			</ul>
+   		</nav>
+   		<hr />
+   		<ul class="breadcrumb">
+   			<li><a href="#">主页</a></li>
+   			<li><a href="#">个人中心</a></li>
+   			<li><a href="#">个性签名</a></li>
+   		</ul>
+   </body>
+   <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="../js/jquery-1.11.0.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="../js/bootstrap.js"></script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Bootstrap 模板</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 引入 Bootstrap -->
+		<link href="../css/bootstrap.css" rel="stylesheet">
+
+		<!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+		<!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+	</head>
+
+	<body>
+		<table class="table table-striped table-bordered table-hover table-condensed">
+		<!--table-striped行级条纹布局也就是隔行换色、table-bordered边框、table-hover鼠标悬停在行上会变浅灰色、
+		table-condensed缩小行内边距让内容更紧凑-->
+			<caption>基本表格样式</caption>
+			<!--表格标题-->
+			<thead>
+				<!--表格头部-->
+				<tr>
+					<th>姓名</th>
+					<th>城市</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--表格身体-->
+				<tr>
+					<td>张三</td>
+					<td>北京</td>
+				</tr>
+				<tr>
+					<td>李四</td>
+					<td>河南</td>
+				</tr>
+				<tr>
+					<td>王五</td>
+					<td>北京</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="table-responsive"> <!--响应式布局表格-->
+			<table class=" table"><!-- table类是声明只带有内边距（padding）和水平分割的基本表-->
+				<caption>基本表格样式</caption>
+				<!--表格标题-->
+				<thead>
+					<!--表格头部-->
+					<tr class="info"> <!--给行元素添加背景颜色-->
+						<th>姓名</th>
+						<th>城市</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--表格身体-->
+					<tr >
+						<td class="warning">张三</td> <!--给单元格元素添加背景颜色-->
+						<td>北京</td>
+					</tr>
+					<tr class="active">
+						<td>李四</td>
+						<td>河南</td>
+					</tr>
+					<tr class="danger">
+						<td>王五</td>
+						<td>北京</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+	<script src="../js/jquery-1.11.0.js "></script>
+	<!-- 包括所有已编译的插件 -->
+	<script src="../js/bootstrap.js "></script>
+
+</html>
