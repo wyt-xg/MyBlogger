@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>Bootstrap 模板</title>
+		<title>个人博客</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- 引入 Bootstrap -->
 		<link href="css/bootstrap.css" rel="stylesheet">
@@ -14,19 +14,27 @@
          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
       <![endif]-->
+
+		<style>
+			.imgg{
+				width: 200px;
+				height: 200px;
+			}
+		</style>
 	</head>
 
 	<body>
-		<!--顶部的框-->
-		<div class="jumbotron text-center" style="margin: 0px;"> <!--jumbotron超大屏幕，style="margin: 0px;"外边距设置为零，去除换行效果-->
+		<!--顶部-->
+		<div class="jumbotron text-center" style="margin: 0px;background-image: url(img/色块.jpg);">
+			<!--jumbotron超大屏幕，style="margin: 0px;"外边距设置为零，去除换行效果-->
 			<div class="container">
-				<h1>个人简历</h2>
-   				<span>欢迎观看本人个人简历</span>
+				<h1>个人博客</h2>
+   				<span>欢迎来到本人的个人博客</span>
    			</div>
    		</div>
    		
-   		<!--导航条-->
-   			<nav class="nav navbar-default navbar-inverse" role="navigation">
+   		<!--响应式导航条-->
+   			<nav class="nav navbar-default navbar-inverse nav-tabs" role="navigation">
    			<div class="navbar-header">
    				<button class="navbar-toggle" data-toggle="collapse" data-target="#nav" type="button">
    					<!--class="navbar-toggle" data-toggle="collapse"声明为向下折叠的导航条， data-target="#nav"是指定要折叠部分-->
@@ -35,54 +43,220 @@
    					<span class="icon-bar"></span>
    					<span class="icon-bar"></span>
    				</button>
-   				<a href="#" class="navbar-brand">个人信息</a> <!--折叠时显示的元素-->
+   				<a href="#myLog" class="navbar-brand" data-toggle="tab">个人博客</a> <!--折叠时显示的元素-->
    			</div>
-   			<div class="collapse navbar-collapse" id="nav"> <!--声明为被折叠-->
-   				<ul class="nav navbar-nav">
-   					<li class="active"><a href="#">个人介绍</a></li>
-   					<li><a href="#">学历信息</a></li>
-   					<li><a href="#">工作经历</a></li>
+   			<div class="collapse navbar-collapse" id="nav"> <!--声明为可被折叠-->
+   				<ul class="nav navbar-nav ">
+   					<li><a href="#home" data-toggle="tab">主页</a></li>
+   					<li><a href="#article" data-toggle="tab">博客</a></li>
+   					<li><a href="#photo" data-toggle="tab">相册</a></li>
+   					<li><input type="text" class=" nav navbar-text" style="margin: 11px;"/></li>
+   					<li><button type="button" class="btn btn-default nav navbar-btn" style="padding: 5px;">搜索</button></li>
    				</ul>
-   				<ul class="nav navbar-nav navbar-right">
-   					<li >
-   						<a href="mailto:1774353910@qq.com?subject=应聘结果"><span class="glyphicon glyphicon-envelope"></span> 联系我</a></li>
-   						
+   				<span class="navbar-right">&nbsp;</span>
+   				
+   				
+   				<!--登录页面-->
+   				<button class="btn btn-primary navbar-btn navbar-right" data-toggle="modal" data-target="#register">登录</button>
+   				<div class="modal fade" id="register" role="dialog" tabindex="-1">
+   					<div class="modal-dialog">
+   						<div class="modal-content">
+   							<div class="modal-header">
+   								<button class="close" data-dismiss="modal" type="button">&times;</button>
+   								<h3>用户登录</h3>
+   							</div>
+   							<div class="modal-body text-center">
+   								<form class="form-inline" role="form" >
+   									<div class="form-group">
+   										<label for="name">用户名：</label>
+   										<input type="text" class="form-control" id="name1" placeholder="请输入用户名"/>
+   									</div>
+   									<br /><br />
+   									<div class="form-group">
+   										<label for="name">密码：</label>
+   										<input type="password" class="form-control" id="pass" placeholder="请输入密码"/>
+   									</div>
+   								</form>
+   							</div>
+   							<div class="modal-footer">
+   								<button type="submit" class="btn btn-primary " id="register01" onclick="test()">登录</button>
+   								<button type="button" class="btn btn-primary" id="forget">忘记密码</button>
+   							</div>
+   						</div>
+   					</div>
+   				</div>
+   				<span class="navbar-right">&nbsp;&nbsp;</span>
+   				
+   				<!--注册内容-->
+   				<button class="btn btn-success navbar-btn navbar-right" data-toggle="modal" data-target="#login">注册</button>
+   				<div class="modal fade" id="login" role="dialog" tabindex="-1">
+   					<div class="modal-dialog">
+   						<div class="modal-content">
+   							<div class="modal-header">
+   								头部
+   							</div>
+   							<div class="modal-body">
+   								内容区
+   							</div>
+   							<div class="modal-footer">
+   								注册尾部
+   							</div>
+   						</div>
+   					</div>
+   				</div>
+   				
+   				<!--显示登录成功信息-->
+   				<ul class="nav navber-nav navbar-right">
+   					<li id="myLi" style="margin: 15px 10px; color: #999999;"></li>
    				</ul>
    			</div>
    		</nav>
-
-   	<!--中间内容-->
-   	<div  class="row">
-   		<div class="col-md-2 col-md-offset-2"> <!--占两列，然后偏移两列-->
-   			<h3>关于我</h3>
-   			<p>我的照片</p>
-   			<a href="#"><img src="img/test.jpg" class="img-thumbnail" title="个人照片"/></a>
-   			<br />
-   			<span>关于我的介绍</span>
-   			<h3 style="color: blue;"><a href="#">个人主页</a></h3>
-   			<p>大家好我是王元涛,我喜欢睡觉.</p>
-   			<!--nav-pills nav-stacked：胶囊式垂直式导航栏-->
-   			<ul class="nav nav-pills nav-stacked"> 
-   				<li class="active"><a href="#">编程天地</a></li>
-   				<li><a href="#">电影天堂</a></li>
-   				<li><a href="#">动漫次元</a></li>
-   			</ul>
+		<!--标签页-->
+		<div id="myDiv" class="tab-content">
+   			<div class="tab-pane fade in active" id="myLog">
+   						<!--中间内容-->
+   				<div  class="row">
+   					<div class="col-md-2 col-md-offset-2"> <!--占两列，然后偏移两列-->
+   						<h3>关于我</h3>
+   						<p>我的照片</p>
+   						<a href="#"><img src="img/test.jpg" class="img-thumbnail" title="个人照片"/></a>
+   						<br />
+   						<span>关于我的介绍</span>
+	   					<h3 style="color: blue;"><a href="#">个人主页</a></h3>
+			   			<p>大家好我是王元涛,我喜欢睡觉.</p>
+			   			<!--nav-pills nav-stacked：胶囊式垂直式导航栏-->
+			   			<ul class="nav nav-pills nav-stacked"> 
+			   				<li class="active"><a href="#">编程天地</a></li>
+			   				<li><a href="#">电影天堂</a></li>
+			   				<li><a href="#">动漫次元</a></li>
+			   			</ul>
+			   		</div>
+			   		<div class="col-md-6">
+			   			<h3>HTML技术</h3>
+			   			<p>HTML入门简介,本章学习的是css</p>
+			   			<img src="img/test.jpg" class="img-thumbnail"/>
+			   			<p>图一：环球时报记者付国豪在香港被极端分子非法囚禁和殴打后，香港记协的“官方声明”；图二：香港警察本周开始对那些混在极端分子中的假记者进行打击后，香港记协的说辞。20天，不敢相信这家“记者协会”的记忆这么短暂。</p>
+			   			<h3>HTML技术</h3>
+			   			<p>HTML入门简介,本章学习的是css</p>
+			   			<img src="img/test.jpg" class="img-thumbnail"/>
+			   			<p>图一：环球时报记者付国豪在香港被极端分子非法囚禁和殴打后，香港记协的“官方声明”；图二：香港警察本周开始对那些混在极端分子中的假记者进行打击后，香港记协的说辞。20天，不敢相信这家“记者协会”的记忆这么短暂。</p>
+			   		</div>
+			   	</div>
+   			</div>
+   			
+   			<!--个人主页-->
+   			<div class="tab-pane fade" id="home">
+   				个人主页
+   			</div>
+   			
+   			<!--博客内容-->
+   			<div class="tab-pane fade" id="article">
+   				
+   			</div>
+   			
+   			<!--照片墙-->
+   			<div class="tab-pane fade " id="photo">
+   				<br />
+	   				<div class="row">
+	   					
+	   					<div class="col-sm-4 col-md-3">
+	   						<div class="thumbnail">
+	   						<a href="#" class="thumbnail" data-toggle="modal" data-target="#img01">
+	   							 <img class="imgg" src="img/只能陪你走一程.png" alt="只能陪你走一程" title="只能陪你走一程"/>
+	   						</a>
+	   						<!--模态框-->
+					   		<div class="modal fade" id="img01" role="dialog" tabindex="-1"> <!--fade:显示方式时淡入淡出的方式-->
+							<!-- tabindex="-1",让模态框默认时在最底层不显示-->
+								<div class="modal-dialog">
+									<!--定义模态框显示效果是一个小的窗口-->
+									<div class="modal-content">
+										<div class="modal-body">
+											<button class="close" data-dismiss="modal" type="button" style="background-color: #FFFFFF">&times;</button>
+											<img   src="img/只能陪你走一程.png" width="500px" height="600px"/>
+										</div>
+									</div>
+								</div>
+							</div>
+	   						<br />
+	   						<h4>作者：蕊希</h4>
+	   						<p>陪伴千万人的电台主持人、畅销书作家蕊希全新力作。这本书是蕊希写作的全新尝试，它带你走进的，不是她的世界。她要给你的，是你的世界。这本书有一个游戏规则：你不能从这里带走任何东西，但你可以，放下很多。如果，只能陪你走一程， 希望我们山水相逢之后，还能再有来生。也许我们的人生会有好多好多的遗憾，也许你也会在经历了人来人往后仍有不甘。但你要相信，那些失去了的，总会在未来得到偿还。人生就是这样，难得圆满，但也，终将圆满。如果能够回到最初，你还会选择爱他/她吗？如果一切可以重新开始，你还会去过你此刻的人生吗？写给每一个不论顺遂险阻， 都在各自的天地里努力生长的人。愿你我永远潇洒坦荡，干净纯良。</p>
+	   					</div>
+	   					</div>
+	   					
+	   					<div class="col-sm-4 col-md-3">
+	   						<div class="thumbnail">
+	   						<a href="#" class="thumbnail" data-toggle="modal" data-target="#img02">
+	   							<img class="imgg"  src="img/test.jpg" alt="愿你迷路到我身旁" title="愿你迷路到我身旁"/>
+	   						</a>
+	   						<!--模态框-->
+	   						<div class="modal fade" id="img02" role="dialog" tabindex="-1"> <!--fade:显示方式时淡入淡出的方式态-->
+							<!-- tabindex="-1",让模态框默认时在最底层不显示-->
+								<div class="modal-dialog">
+									<!--声明一个容器-->
+									<div class="modal-content">
+										<div class="modal-body">
+											<button class="close" data-dismiss="modal" type="button" style="background-color: #FFFFFF">&times;</button>
+											<img src="img/test.jpg" width="500px" height="600px"/>
+										</div>
+									</div>
+								</div>
+							</div>
+	   						<br />
+	   						<h4>作者：蕊希</h4>
+	   						<p>陪伴千万人的电台主持人、畅销书作家蕊希全新力作。这本书是蕊希写作的全新尝试，它带你走进的，不是她的世界。她要给你的，是你的世界。这本书有一个游戏规则：你不能从这里带走任何东西，但你可以，放下很多。如果，只能陪你走一程， 希望我们山水相逢之后，还能再有来生。也许我们的人生会有好多好多的遗憾，也许你也会在经历了人来人往后仍有不甘。但你要相信，那些失去了的，总会在未来得到偿还。人生就是这样，难得圆满，但也，终将圆满。如果能够回到最初，你还会选择爱他/她吗？如果一切可以重新开始，你还会去过你此刻的人生吗？写给每一个不论顺遂险阻， 都在各自的天地里努力生长的人。愿你我永远潇洒坦荡，干净纯良。</p>
+	   					</div>
+	   					</div>
+	   					
+	   					<div class="col-sm-4 col-md-3">
+	   						<div class="thumbnail">
+	   						<a href="#" class="thumbnail" data-toggle="modal" data-target="#img03">
+	   							<img class="imgg" src="img/要习惯一个人.png" alt="总要习惯一个人" title="总要习惯一个人"/>
+	   						</a>
+	   						<!--模态框-->
+	   						<div class="modal fade" id="img03" role="dialog" tabindex="-1">
+	   							<div class="modal-dialog">
+	   								<div class="modal-content">
+	   									<div class="modal-body">
+	   										<button class="close" data-dismiss="modal" type="button" style="background-color: #FFFFFF;">&times;</button>
+	   										<img src="img/要习惯一个人.png" width="500px" height="600px"/>
+	   									</div>
+	   								</div>
+	   							</div>
+	   						</div>
+	   						<br />
+	   						<h4>作者：蕊希</h4>
+	   						<p>陪伴千万人的电台主持人、畅销书作家蕊希全新力作。这本书是蕊希写作的全新尝试，它带你走进的，不是她的世界。她要给你的，是你的世界。这本书有一个游戏规则：你不能从这里带走任何东西，但你可以，放下很多。如果，只能陪你走一程， 希望我们山水相逢之后，还能再有来生。也许我们的人生会有好多好多的遗憾，也许你也会在经历了人来人往后仍有不甘。但你要相信，那些失去了的，总会在未来得到偿还。人生就是这样，难得圆满，但也，终将圆满。如果能够回到最初，你还会选择爱他/她吗？如果一切可以重新开始，你还会去过你此刻的人生吗？写给每一个不论顺遂险阻， 都在各自的天地里努力生长的人。愿你我永远潇洒坦荡，干净纯良。</p>
+	   					</div>
+	   					</div>
+	   					
+	   					<div class="col-sm-4 col-md-3">
+	   						<div class="thumbnail">
+	   						<a href="#" class="thumbnail" data-toggle="modal" data-target="#img04">
+	   							<img class="imgg" src="img/愿你迷路到我身旁.png" alt="总要习惯一个人" title="总要习惯一个人"/>
+	   						</a>
+	   						<!--模态框-->
+	   						<div class="modal fade" id="img04" role="dialog" tabindex="-1">
+	   							<div class="modal-dialog">
+	   								<div class="modal-content">
+	   									<div class="modal-body">
+	   										<button class="close" data-dismiss="modal" type="button" style="background-color: #FFFFFF;">&times;</button>
+	   										<img src="img/愿你迷路到我身旁.png" width="500px" height="600px"/>
+	   									</div>
+	   								</div>
+	   							</div>
+	   						</div>
+	   						<br />
+	   						<h4>作者：蕊希</h4>
+	   						<p>陪伴千万人的电台主持人、畅销书作家蕊希全新力作。这本书是蕊希写作的全新尝试，它带你走进的，不是她的世界。她要给你的，是你的世界。这本书有一个游戏规则：你不能从这里带走任何东西，但你可以，放下很多。如果，只能陪你走一程， 希望我们山水相逢之后，还能再有来生。也许我们的人生会有好多好多的遗憾，也许你也会在经历了人来人往后仍有不甘。但你要相信，那些失去了的，总会在未来得到偿还。人生就是这样，难得圆满，但也，终将圆满。如果能够回到最初，你还会选择爱他/她吗？如果一切可以重新开始，你还会去过你此刻的人生吗？写给每一个不论顺遂险阻， 都在各自的天地里努力生长的人。愿你我永远潇洒坦荡，干净纯良。</p>
+	   					</div>
+	   					</div>
+	   				</div>
+   				
+   			</div>
    		</div>
-   		<div class="col-md-6">
-   			<h3>HTML技术</h3>
-   			<p>HTML入门简介,本章学习的是css</p>
-   			<img src="img/test.jpg" class="img-thumbnail"/>
-   			<p>图一：环球时报记者付国豪在香港被极端分子非法囚禁和殴打后，香港记协的“官方声明”；图二：香港警察本周开始对那些混在极端分子中的假记者进行打击后，香港记协的说辞。20天，不敢相信这家“记者协会”的记忆这么短暂。</p>
-   			<h3>HTML技术</h3>
-   			<p>HTML入门简介,本章学习的是css</p>
-   			<img src="img/test.jpg" class="img-thumbnail"/>
-   			<p>图一：环球时报记者付国豪在香港被极端分子非法囚禁和殴打后，香港记协的“官方声明”；图二：香港警察本周开始对那些混在极端分子中的假记者进行打击后，香港记协的说辞。20天，不敢相信这家“记者协会”的记忆这么短暂。</p>
-   		</div>
-   		
-   	</div>
    	
    	<!--尾部-->
-   	<div class="jumbotron text-center" style="margin: 0px;height: 100px;">
+   	<div class="jumbotron text-center" style="margin: 0px;height: 100px;background-image: url(img/背景.jpg);">
 			<div class="container">
    			<a href="mailto:1774353910@qq.com?subject=应聘结果"><span style="color: #aaaaaa;">点击发送邮件：1774353910@qq.com</span></a>
    			</div>
@@ -92,4 +266,20 @@
       <script src="js/jquery-1.11.0.js"></script>
       <!-- 包括所有已编译的插件 -->
       <script src="js/bootstrap.js"></script>
+      <script>
+      	$(function(){
+      		//模态框处于隐藏状态时执行
+      		$('#register').on('hide.bs.modal', function () {
+      			//获取输入框内容
+  				var name=document.getElementById("name1").value;
+  				//向id为myLi的元素写入内容
+      		    document.getElementById("myLi").innerHTML=name+"用户登录成功！"
+ 	 		})
+      	})
+      	
+      	function test(){
+       //点击登录按钮时关闭模态框
+      		 $('#register').modal('hide'); 
+      	}
+      </script>
 </html>
